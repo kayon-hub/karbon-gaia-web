@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARBØN X GAIA ENTERTAINMENT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        #carousel-img { transition: opacity 1.2s ease-in-out; }
+        /* 輕微陰影，確保在亮色背景也能看到白字 */
+        .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-black tracking-[0.3em] text-black">KARBØN X GAIA</div>
+            <nav class="hidden md:flex space-x-8 text-xs font-bold tracking-widest text-gray-500">
+                <a href="#" class="hover:text-black transition">ARTISTS</a>
+                <a href="#" class="hover:text-black transition">ABOUT</a>
+                <a href="#" class="hover:text-black transition">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="mt-20 relative w-full h-[80vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
+        
+        <div class="absolute inset-0 flex items-start justify-center">
+            <img id="carousel-img" 
+                 src="images/eunahero-banner.jpg" 
+                 class="w-full h-full object-cover object-top opacity-100 z-10" 
+                 alt="Artist">
+            
+            <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+        </div>
+
+        <div class="relative z-30 text-center">
+            <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase text-shadow-sm">FEATURED ARTIST</h2>
+            <h1 id="artist-name" class="text-white text-3xl md:text-4xl font-bold tracking-[0.2em] uppercase text-shadow-sm">EUNA</h1>
+            <div class="w-8 h-[1px] bg-white/40 mx-auto mt-4"></div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2 class="text-2xl font-black mb-6 tracking-widest text-black">ARTIST PROFILE</h2>
+        <p class="text-gray-500 leading-relaxed">
+            在這裡可以放置藝人的簡介與最新消息。
+        </p>
+    </section>
+
+    <script>
+        const artists = [
+            { name: "EUNA", img: "images/eunahero-banner.jpg" },
+            { name: "NØVEX", img: "images/novexhero-banner.jpg" },
+            { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
+            { name: "JOAH", img: "images/joahhero-banner.jpg" },
+            { name: "RAUN", img: "images/raunhero-banner.jpg" },
+            { name: "GAIALYRA", img: "images/gaialyrahero-banner.jpg" },
+            { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
+            { name: "RÆNE", img: "images/raenehero-banner.jpg" }
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.getElementById('carousel-img');
+        const nameElement = document.getElementById('artist-name');
+
+        function nextSlide() {
+            imgElement.style.opacity = '0';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % artists.length;
+                imgElement.src = artists[currentIndex].img;
+                nameElement.innerText = artists[currentIndex].name;
+                imgElement.style.opacity = '1';
+            }, 1200);
+        }
+        setInterval(nextSlide, 5000);
+    </script>
+
+</body>
+</html>
