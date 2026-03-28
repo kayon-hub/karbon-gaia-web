@@ -13,7 +13,6 @@
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
-        .lang-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
@@ -37,14 +36,14 @@
             <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black to-transparent z-20"></div>
         </div>
         <div class="relative z-30 text-center">
-            <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">FEATURED ARTIST</h2>
+            <h2 class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">FEATURED ARTIST</h2>
             <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase italic text-shadow-sm">劉揚安</h1>
             <div class="w-12 h-[1px] bg-white/40 mx-auto mt-6"></div>
         </div>
     </section>
 
     <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
-        <div class="mb-16 text-center lg:text-left">
+        <div class="mb-16">
             <h2 class="text-5xl font-black tracking-tighter italic text-black uppercase">藝人陣容</h2>
         </div>
         <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
@@ -54,39 +53,56 @@
     <section id="host" class="max-w-7xl mx-auto px-6 py-32 border-t border-gray-50">
         <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
             <div class="w-full md:w-1/2">
-                <h2 class="text-6xl font-black italic tracking-tighter mb-8 uppercase text-black text-center md:text-left">劉揚安</h2>
-                <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light italic text-center md:text-left">"Bridging the gap between the virtual and reality."</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
-                        <span class="text-xl font-black group-hover:text-white italic">PODCAST CHANNEL</span>
+                <h2 class="text-5xl font-black italic tracking-tighter mb-2 uppercase text-black">劉揚安 - 揚安在這</h2>
+                <span class="text-[10px] font-bold text-gray-400 tracking-[0.4em] uppercase mb-8 block">Official Executive Host</span>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <a href="https://youtube.com/@yangan_here?themeRefresh=1" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">YouTube</span>
+                        <span class="text-sm font-black group-hover:text-white italic">YANGAN_HERE</span>
                     </a>
-                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
-                        <span class="text-xl font-black group-hover:text-white italic">YOUTUBE SHOW</span>
+                    <a href="https://podcasts.apple.com/us/podcast/%E6%8F%9A%E5%AE%89%E5%9C%A8%E9%80%99/id1804222187" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">Apple</span>
+                        <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
+                    </a>
+                    <a href="https://open.spotify.com/show/0" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">Spotify</span>
+                        <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
+                    </a>
+                    <a href="https://podcast.kkbox.com/tw/channel/DYJFAc8AWGdiaKKpo4" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">KKBOX</span>
+                        <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
                     </a>
                 </div>
             </div>
             <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden">
-                <img src="talents/luyangan.webp" class="w-full h-full object-cover transition duration-700" onerror="this.src='https://via.placeholder.com/1020x1020?text=LUYANGAN'">
+                <img src="talents/luyangan.webp" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/1020x1020?text=LUYANGAN'">
             </div>
         </div>
     </section>
 
     <section id="founder" class="bg-black text-white py-32 px-8">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase text-white">創辦人 KAYON</h3>
-            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">創辦人 KAYON 將音樂製作的直覺與 AI 前瞻技術融合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。</p>
+            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">創辦人 KAYON</h3>
+            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。</p>
+            <div class="h-[1px] w-20 bg-white/30 mx-auto"></div>
         </div>
     </section>
 
+    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
+        <p class="text-gray-500 leading-relaxed font-light italic">"Merging AI Intelligence with Human Soul to create the future of Entertainment."</p>
+    </section>
+
     <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6 text-center">
-        <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter underline">聯絡我們</h3>
+        <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter underline underline-offset-8">聯絡我們</h3>
         <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-10">Manager: AVA</p>
         <a href="mailto:contact@kayonstudio.com" class="inline-block bg-black text-white px-12 py-5 font-black italic text-lg hover:bg-gray-800 transition-all uppercase">合作洽談</a>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 藝人資料 (指向 talents/ 資料夾)
+            // 藝人矩陣資料 (依照排位)
             const talentsData = [
                 { name: "NØVEX", cat: "FOUNDING GROUP", img: "talents/novex.webp" },
                 { name: "NÄXER", cat: "FOUNDING GROUP", img: "talents/naxer.webp" },
@@ -104,7 +120,7 @@
                 talentsData.forEach((talent, index) => {
                     grid.innerHTML += `
                         <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
-                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 relative">
+                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
                                 <img src="${talent.img}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
                             </div>
                             <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
@@ -113,7 +129,7 @@
                 });
             }
 
-            // Banner 輪播 (指向 images/ 資料夾)
+            // Banner 輪播資料
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
                 { name: "NØVEX", img: "images/novexhero-banner.jpg" },
