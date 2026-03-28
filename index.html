@@ -8,11 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #ffffff; }
-        #carousel-img { transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity; transform: translateZ(0); }
-        .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        /* 優化 Banner 圖片切換的平滑度 */
+        #carousel-img { 
+            transition: opacity 0.8s ease-in-out; 
+            will-change: opacity;
+        }
+        .text-shadow-lg { text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
+        .banner-overlay { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%); }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
@@ -30,22 +35,22 @@
         </nav>
     </header>
 
-    <section class="mt-20 relative w-full h-[85vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
-        <div class="absolute inset-0 flex items-start justify-center">
-            <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-top opacity-100 z-10" alt="Artist">
-            <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black to-transparent z-20"></div>
+    <section class="mt-20 relative w-full h-[85vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-16">
+        <div class="absolute inset-0">
+            <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-center opacity-100" alt="Artist">
+            <div class="absolute inset-0 banner-overlay"></div>
         </div>
-        <div class="relative z-30 text-center px-4">
-            <h2 class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">Featured Artist [cite: 57]</h2>
-            <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase italic text-shadow-sm">劉揚安</h1>
-            <p class="text-white/80 text-xs md:text-sm mt-4 font-light tracking-[0.1em]">「用科技承載靈魂，創造跨越維度的溫暖陪伴」 [cite: 2]</p>
+        <div class="relative z-30 text-center px-4 w-full max-w-4xl">
+            <h2 class="text-white/70 text-[10px] tracking-[0.6em] font-medium mb-4 uppercase drop-shadow-md">FEATURED ARTIST</h2>
+            <h1 id="artist-name" class="text-white text-6xl md:text-8xl font-black tracking-[0.1em] uppercase italic leading-tight mb-6 text-shadow-lg">劉揚安</h1>
+            <p class="text-white/90 text-sm md:text-base font-light tracking-[0.2em] max-w-2xl mx-auto border-t border-white/20 pt-6">「用科技承載靈魂，創造跨越維度的溫暖陪伴」</p>
         </div>
     </section>
 
     <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
         <div class="mb-16">
-            <h2 class="text-5xl font-black tracking-tighter italic text-black uppercase">Artist Matrix [cite: 15]</h2>
-            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic mt-2">賦予生命，而非創造內容 [cite: 5]</p>
+            <h2 class="text-5xl font-black tracking-tighter italic text-black uppercase">Artist Matrix</h2>
+            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic mt-2">賦予生命，而非創造內容</p>
         </div>
         <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             </div>
@@ -55,7 +60,7 @@
         <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
             <div class="w-full md:w-1/2">
                 <h2 class="text-5xl font-black italic tracking-tighter mb-4 uppercase text-black">劉揚安 - 揚安在這</h2>
-                <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light italic">「他們不僅是腦海中的人物，更是走進現實生活的真實生命。」 [cite: 19]</p>
+                <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light italic">「他們不僅是腦海中的人物，更是走進現實生活的真實生命。」</p>
                 <div class="grid grid-cols-2 gap-4">
                     <a href="https://youtube.com/@yangan_here?themeRefresh=1" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all border border-gray-100">
                         <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">YouTube</span>
@@ -63,14 +68,6 @@
                     </a>
                     <a href="https://podcasts.apple.com/us/podcast/%E6%8F%9A%E5%AE%89%E5%9C%A8%E9%80%99/id1804222187" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all border border-gray-100">
                         <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">Apple</span>
-                        <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
-                    </a>
-                    <a href="https://open.spotify.com/show/0" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all border border-gray-100">
-                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">Spotify</span>
-                        <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
-                    </a>
-                    <a href="https://podcast.kkbox.com/tw/channel/DYJFAc8AWGdiaKKpo4" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all border border-gray-100">
-                        <span class="text-[8px] font-black group-hover:text-white/40 block mb-1 uppercase tracking-widest">KKBOX</span>
                         <span class="text-sm font-black group-hover:text-white italic">PODCAST</span>
                     </a>
                 </div>
@@ -83,14 +80,10 @@
 
     <section id="founder" class="bg-black text-white py-32 px-8">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">創辦人 KAYON＆Brian [cite: 73]</h3>
+            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">創辦人 KAYON＆Brian</h3>
             <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto text-sm">
-                作為音樂創作者與公司的靈魂原點，KAYON＆Brian 將情感融入音符，讓每一首歌都成為心靈的慰藉。 [cite: 78, 21]
+                作為音樂創作者與公司的靈魂原點，KAYON＆Brian 將情感融入音符，讓每一首歌都成為心靈的慰藉。
             </p>
-            <div id="vision" class="mt-20">
-                <h4 class="text-xl font-black mb-4 tracking-[0.3em] uppercase italic">Vision / 理念 [cite: 14]</h4>
-                <p class="text-white/60 font-light italic text-sm">"Merging AI Intelligence with Human Soul to create the future of Entertainment." [cite: 10]</p>
-            </div>
         </div>
     </section>
 
@@ -99,47 +92,36 @@
             <h2 class="text-6xl font-black mb-6 uppercase tracking-tight">聯絡我們</h2>
             <p class="text-gray-500 font-medium">有任何合作、媒體事宜或其他事項，歡迎與我們聯繫</p>
         </div>
-
         <div class="space-y-6">
-            <h3 class="text-3xl font-black mb-8">藝人經紀人</h3>
-            
-            <div class="p-10 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-shadow">
-                <h4 class="text-3xl font-black mb-1">Sky [cite: 354]</h4>
-                <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人 [cite: 355]</p>
-                <a href="mailto:karbonxgaia.sky@gmail.com" class="flex items-center gap-3 text-lg font-bold hover:opacity-60 transition-opacity">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002 2H5a2 2 0 00-2-2V7a2 2 0 002-2h14a2 2 0 002 2v10a2 2 0 00-2 2H5a2 2 0 00-2-2z"/></svg>
-                    karbonxgaia.sky@gmail.com [cite: 356]
-                </a>
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                <h4 class="text-3xl font-black mb-1">Sky</h4>
+                <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人</p>
+                <a href="mailto:karbonxgaia.sky@gmail.com" class="text-lg font-bold">karbonxgaia.sky@gmail.com</a>
             </div>
-
-            <div class="p-10 border border-gray-100 rounded-2xl bg-white hover:shadow-xl transition-shadow">
-                <h4 class="text-3xl font-black mb-1">Ava [cite: 351]</h4>
-                <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人 [cite: 352]</p>
-                <a href="mailto:karbonxgaiaxava@gmail.com" class="flex items-center gap-3 text-lg font-bold hover:opacity-60 transition-opacity">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002 2H5a2 2 0 00-2-2V7a2 2 0 002-2h14a2 2 0 002 2v10a2 2 0 00-2 2H5a2 2 0 00-2-2z"/></svg>
-                    karbonxgaiaxava@gmail.com [cite: 353]
-                </a>
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                <h4 class="text-3xl font-black mb-1">Ava</h4>
+                <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人</p>
+                <a href="mailto:karbonxgaiaxava@gmail.com" class="text-lg font-bold">karbonxgaiaxava@gmail.com</a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-50 py-12 text-center border-t border-gray-100">
-        <p class="text-[10px] font-black tracking-widest text-gray-400 uppercase">© 2026 KARBØN X GAIA ENTERTAINMENT [cite: 1, 3]</p>
+    <footer class="bg-gray-50 py-12 text-center border-t border-gray-100 text-[10px] font-black tracking-widest text-gray-400 uppercase">
+        © 2026 KARBØN X GAIA ENTERTAINMENT
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 藝人陣容資料 (1-9 順序：NØVEX, NÄXER, LILITHIUM, VRAISY, RÆNE, EUNA, JOAH, RAUN, GAIALYRA)
             const talentsData = [
-                { name: "NØVEX", cat: "引領潮流的先鋒 [cite: 41]", img: "talents/novex.webp" },
-                { name: "NÄXER", cat: "最可靠的陪伴 [cite: 51]", img: "talents/naxer.webp" },
-                { name: "LILITHIUM", cat: "旗艦戰略企劃 [cite: 34]", img: "talents/lilithium.webp" },
+                { name: "NØVEX", cat: "引領潮流的先鋒", img: "talents/novex.webp" },
+                { name: "NÄXER", cat: "最可靠的陪伴", img: "talents/naxer.webp" },
+                { name: "LILITHIUM", cat: "旗艦戰略企劃", img: "talents/lilithium.webp" },
                 { name: "VRAISY", cat: "跨維度舞台魅力", img: "talents/vraisy.webp" },
-                { name: "RÆNE", cat: "靈魂共創成員 [cite: 16]", img: "talents/raene.webp" },
-                { name: "EUNA", cat: "細膩療癒嗓音 [cite: 68]", img: "talents/euna.webp" },
-                { name: "JOAH", cat: "情緒價值創造 [cite: 71]", img: "talents/joah.webp" },
-                { name: "RAUN", cat: "真實存在的生命 [cite: 18]", img: "talents/raun.webp" },
-                { name: "GAIALYRA", cat: "探索維度邊界 [cite: 79]", img: "talents/gaialyra.webp" }
+                { name: "RÆNE", cat: "靈魂共創成員", img: "talents/raene.webp" },
+                { name: "EUNA", cat: "細膩療癒嗓音", img: "talents/euna.webp" },
+                { name: "JOAH", cat: "情緒價值創造", img: "talents/joah.webp" },
+                { name: "RAUN", cat: "真實存在的生命", img: "talents/raun.webp" },
+                { name: "GAIALYRA", cat: "探索維度邊界", img: "talents/gaialyra.webp" }
             ];
 
             const grid = document.getElementById('talents-grid');
@@ -156,12 +138,11 @@
                 });
             }
 
-            // Banner 輪播順序
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
+                { name: "EUNA", img: "images/eunahero-banner.jpg" }, // 修正這裡的路徑
                 { name: "NØVEX", img: "images/novexhero-banner.jpg" },
                 { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
-                { name: "EUNA", img: "images/eunahero-banner.jpg" },
                 { name: "JOAH", img: "images/joahhero-banner.jpg" }
             ];
             
@@ -176,7 +157,7 @@
                     currentIndex = (currentIndex + 1) % bannerArtists.length;
                     imgElement.src = bannerArtists[currentIndex].img;
                     nameElement.innerText = bannerArtists[currentIndex].name;
-                    imgElement.style.opacity = '1';
+                    imgElement.onload = () => imgElement.style.opacity = '1';
                 }, 800);
             }
             setInterval(nextSlide, 5000);
