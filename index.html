@@ -9,83 +9,29 @@
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; }
         #carousel-img { transition: opacity 1.2s ease-in-out; }
-        /* 輕微陰影，確保在亮色背景也能看到白字 */
         .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-       <div class="flex flex-wrap gap-4 mb-12">
-    <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-sm">ALL 全部</button>
-    <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-sm text-gray-600">AI VIRTUAL 虛擬藝人</button>
-    <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-sm text-gray-600">HUMAN 真人藝人</button>
-</div>
-
-<script>
-    const talentsData = [
-        // 真人藝人 (2位)
-        { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
-        { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
-        
-        // AI 虛擬藝人 (精選展示)
-        { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL", img: "gaialyra.webp" },
-        { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" },
-        { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
-        { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
-        { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
-        { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
-        { name: "LUYANGAN", type: "AI", category: "VIRTUAL IDOL", img: "luyangan.webp" },
-        
-        // 提示：剩下的 23 位 AI 藝人，你之後只要按這個格式補進來就好
-    ];
-
-    function renderTalents(filter = 'all') {
-        const grid = document.getElementById('talents-grid');
-        grid.innerHTML = ''; // 清空舊內容
-
-        const filtered = filter === 'all' ? talentsData : talentsData.filter(t => t.type === filter);
-
-        filtered.forEach(talent => {
-            grid.innerHTML += `
-                <div class="group animate-fadeIn">
-                    <div class="aspect-square rounded-2xl bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
-                        ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm z-10">AI VIRTUAL</span>' : ''}
-                        
-                        <img src="images/talents/${talent.img}" 
-                             alt="${talent.name}" 
-                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
-                             onerror="this.src='https://via.placeholder.com/500?text=COMING+SOON'">
-                    </div>
-                    <h3 class="text-2xl font-black text-black italic tracking-tighter">${talent.name}</h3>
-                    <p class="text-xs font-bold text-gray-400 mt-1 uppercase">${talent.category}</p>
-                    <button class="mt-4 text-[10px] font-black tracking-widest border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
-                        CONTACT AVA FOR BOOKING
-                    </button>
-                </div>
-            `;
-        });
-    }
-
-    function filterTalents(type) {
-        renderTalents(type);
-    }
-
-    // 初始載入
-    renderTalents();
-</script>
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 px-8 py-4 flex justify-between items-center">
+        <div class="text-xl font-black tracking-tighter italic">KARBØN X GAIA</div>
+        <div class="hidden md:flex gap-8 text-[10px] font-black tracking-widest uppercase">
+            <a href="#" class="hover:text-gray-500">Talents</a>
+            <a href="#" class="hover:text-gray-500">Contact</a>
+        </div>
+    </header>
 
     <section class="mt-20 relative w-full h-[80vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
-        
         <div class="absolute inset-0 flex items-start justify-center">
             <img id="carousel-img" 
                  src="images/eunahero-banner.jpg" 
                  class="w-full h-full object-cover object-top opacity-100 z-10" 
                  alt="Artist">
-            
             <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
         </div>
-
         <div class="relative z-30 text-center">
             <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase text-shadow-sm">FEATURED ARTIST</h2>
             <h1 id="artist-name" class="text-white text-3xl md:text-4xl font-bold tracking-[0.2em] uppercase text-shadow-sm">EUNA</h1>
@@ -93,14 +39,38 @@
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h2 class="text-2xl font-black mb-6 tracking-widest text-black">ARTIST PROFILE</h2>
-        <p class="text-gray-500 leading-relaxed">
-            在這裡可以放置藝人的簡介與最新消息。
-        </p>
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div>
+                <h2 class="text-5xl font-black mb-4 tracking-tighter italic">TALENTS & IPs</h2>
+                <p class="text-gray-400 font-bold text-xs tracking-widest uppercase">32 Artists • 29 AI Virtual / 2 Human / 1 Host</p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase">ALL 全部</button>
+                <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase">AI VIRTUAL</button>
+                <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase">HUMAN</button>
+            </div>
+        </div>
+
+        <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-20">
+            </div>
     </section>
 
+    <footer class="bg-gray-50 py-20 border-t border-gray-100 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-black mb-4 tracking-tight">MANAGEMENT & BOOKING</h3>
+                <p class="text-gray-500">藝人經紀窗口：AVA (經理)</p>
+            </div>
+            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-12 py-4 font-black text-xs tracking-widest hover:scale-105 transition-transform uppercase">
+                Contact via Email
+            </a>
+        </div>
+    </footer>
+
     <script>
+        /* --- Banner 輪播邏輯 (原封不動) --- */
         const artists = [
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
             { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -111,11 +81,9 @@
             { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
             { name: "RÆNE", img: "images/raenehero-banner.jpg" }
         ];
-
         let currentIndex = 0;
         const imgElement = document.getElementById('carousel-img');
         const nameElement = document.getElementById('artist-name');
-
         function nextSlide() {
             imgElement.style.opacity = '0';
             setTimeout(() => {
@@ -126,6 +94,55 @@
             }, 1200);
         }
         setInterval(nextSlide, 5000);
+
+        /* --- 藝人網格渲染邏輯 --- */
+        const talentsData = [
+            { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
+            { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
+            { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL", img: "gaialyra.webp" },
+            { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" },
+            { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
+            { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
+            { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
+            { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
+            { name: "LUYANGAN", type: "AI", category: "VIRTUAL IDOL", img: "luyangan.webp" },
+            // 補足至 32 位的 Coming Soon 佔位
+            ...Array.from({ length: 23 }, (_, i) => ({
+                name: `IP PROJECT ${i + 10}`,
+                type: "AI",
+                category: "UPCOMING ARTIST",
+                img: "coming-soon.webp"
+            }))
+        ];
+
+        function renderTalents(filter = 'all') {
+            const grid = document.getElementById('talents-grid');
+            if(!grid) return;
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? talentsData : talentsData.filter(t => t.type === filter);
+
+            filtered.forEach(talent => {
+                grid.innerHTML += `
+                    <div class="group animate-fadeIn">
+                        <div class="aspect-[3/4] rounded-sm bg-gray-100 overflow-hidden mb-6 relative">
+                            ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black/90 text-white text-[8px] font-black px-2 py-1 tracking-widest z-10">AI VIRTUAL</span>' : ''}
+                            <img src="images/talents/${talent.img}" 
+                                 class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
+                                 onerror="this.src='https://via.placeholder.com/600x800?text=K+X+G+PREVIEW'">
+                        </div>
+                        <h3 class="text-2xl font-black text-black italic tracking-tighter uppercase">${talent.name}</h3>
+                        <p class="text-[10px] font-bold text-gray-400 mt-2 tracking-widest uppercase">${talent.category}</p>
+                    </div>
+                `;
+            });
+        }
+
+        function filterTalents(type) {
+            renderTalents(type);
+        }
+
+        // 初始執行
+        renderTalents();
     </script>
 
 </body>
