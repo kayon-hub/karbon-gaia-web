@@ -80,4 +80,77 @@
                 <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light">
                     品牌核心主持人，跨越 Podcast 與 YouTube 領域，以深度的內容創作為 KARBØN X GAIA 提供持續的品牌發聲。
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Listen on</span>
+                        <span class="text-xl font-black group-hover:text-white italic">PODCAST CHANNEL</span>
+                    </a>
+                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Watch on</span>
+                        <span class="text-xl font-black group-hover:text-white italic">YOUTUBE SHOW</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden">
+                <img src="images/talents/luyangan.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" onerror="this.src='https://via.placeholder.com/800x800?text=LUYANGAN'">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Banner 資料
+            const bannerArtists = [
+                { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
+                { name: "NØVEX", img: "images/novexhero-banner.jpg" },
+                { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
+                { name: "EUNA", img: "images/eunahero-banner.jpg" },
+                { name: "JOAH", img: "images/joahhero-banner.jpg" }
+            ];
+
+            let currentIndex = 0;
+            const imgElement = document.getElementById('carousel-img');
+            const nameElement = document.getElementById('artist-name');
+
+            function nextSlide() {
+                if(!imgElement) return;
+                imgElement.style.opacity = '0';
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % bannerArtists.length;
+                    imgElement.src = bannerArtists[currentIndex].img;
+                    nameElement.innerText = bannerArtists[currentIndex].name;
+                    imgElement.style.opacity = '1';
+                }, 800);
+            }
+            setInterval(nextSlide, 5000);
+
+            // 2. 藝人資料 - 依照你的指定順序
+            const talentsData = [
+                { name: "NØVEX", type: "AI", category: "FOUNDING GROUP", img: "novex.webp" },
+                { name: "NÄXER", type: "AI", category: "FOUNDING GROUP", img: "naxer.webp" },
+                { name: "LILITHIUM", type: "AI", category: "ARTIST GROUP", img: "lilithium.webp" },
+                { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
+                { name: "RÆNE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
+                { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
+                { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
+                { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" }
+            ];
+
+            const grid = document.getElementById('talents-grid');
+            if(grid) {
+                talentsData.forEach((talent, index) => {
+                    grid.innerHTML += `
+                        <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
+                            <div class="aspect-[3/4] bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                                ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 z-10">AI VIRTUAL</span>' : ''}
+                                <img src="images/talents/${talent.img}" class="w-full h-full object-cover transition duration-700 grayscale hover:grayscale-0 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x533?text=${talent.name}'">
+                            </div>
+                            <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
+                            <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase">${talent.category}</p>
+                        </div>`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
