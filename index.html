@@ -8,15 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #ffffff; }
-        /* 💡 絲滑關鍵：GPU 硬體加速與優化動畫時間 */
-        #carousel-img { 
-            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1); 
-            will-change: opacity;
-            transform: translateZ(0); /* 強制開啟 GPU 加速 */
-        }
+        #carousel-img { transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1); will-change: opacity; transform: translateZ(0); }
         .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
         .lang-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
@@ -27,19 +22,15 @@
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-xl font-black tracking-tighter italic text-black uppercase">KARBØN X GAIA</div>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
-                <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
                 <a href="#talents" class="hover:text-black transition-colors uppercase">藝人</a>
+                <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
+                <a href="#host" class="hover:text-black transition-colors uppercase">主持人</a>
                 <a href="#vision" class="hover:text-black transition-colors uppercase">理念</a>
-                <a href="#collab" class="hover:text-black transition-colors uppercase">協作</a>
                 <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡</a>
+                
                 <div class="flex items-center gap-1.5 pl-4 border-l border-gray-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" />
-                    </svg>
-                    <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] hover:opacity-60 focus:outline-none cursor-pointer">
-                        <option value="zh-TW">中文</option>
-                        <option value="en">EN</option>
-                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" /></svg>
+                    <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] focus:outline-none cursor-pointer"><option>中文</option><option>EN</option></select>
                 </div>
             </div>
         </nav>
@@ -47,20 +38,77 @@
 
     <section class="mt-20 relative w-full h-[85vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
         <div class="absolute inset-0 flex items-start justify-center">
-            <img id="carousel-img" 
-                 src="images/luyanganhero-banner.jpg" 
-                 class="w-full h-full object-cover object-top opacity-100 z-10" 
-                 alt="Artist">
+            <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-top opacity-100 z-10" alt="Artist">
             <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black to-transparent z-20"></div>
         </div>
         <div class="relative z-30 text-center">
-            <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase text-shadow-sm">FEATURED ARTIST</h2>
-            <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase text-shadow-sm italic">劉揚安</h1>
+            <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">FEATURED ARTIST</h2>
+            <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase italic">劉揚安</h1>
             <div class="w-12 h-[1px] bg-white/40 mx-auto mt-6"></div>
         </div>
     </section>
 
+    <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
+        <div class="mb-20">
+            <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black uppercase">Artist Matrix</h2>
+            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic">8 Global IP Projects</p>
+        </div>
+        <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-24">
+            </div>
+    </section>
+
+    <section id="founder" class="bg-black text-white py-32 px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="aspect-[4/5] bg-gray-900 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition duration-1000 border border-white/5">
+                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-5xl uppercase">KAYON</div>
+            </div>
+            <div>
+                <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Founder</h2>
+                <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">KAYON HUNG</h3>
+                <p class="text-gray-400 leading-relaxed mb-8 text-sm">
+                    KARBØN X GAIA 由 KAYON 創立，將音樂製作的直覺與 AI 前瞻技術融合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙。
+                </p>
+                <div class="h-[1px] w-20 bg-white/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="host" class="max-w-7xl mx-auto px-6 py-32">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2">
+                <span class="text-[10px] font-bold text-gray-400 tracking-[0.4em] uppercase">Executive Host</span>
+                <h2 class="text-6xl font-black italic tracking-tighter mt-4 mb-8 uppercase text-black">劉揚安 LUYANGAN</h2>
+                <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light">
+                    作為品牌核心主持人，劉揚安跨越 Podcast 與 YouTube 領域，以深度的內容創作為 KARBØN X GAIA 提供持續的品牌發聲。
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Listen on</span>
+                        <span class="text-xl font-black group-hover:text-white italic">PODCAST CHANNEL</span>
+                    </a>
+                    <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
+                        <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Watch on</span>
+                        <span class="text-xl font-black group-hover:text-white italic">YOUTUBE SHOW</span>
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 aspect-square bg-gray-100 border border-gray-100 overflow-hidden">
+                <img src="images/talents/luyangan.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" onerror="this.src='https://via.placeholder.com/800x800?text=LUYANGAN'">
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-50 py-20 border-t border-gray-100 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Contact Manager: <span class="text-black">AVA</span></p>
+            <div class="h-[1px] flex-grow bg-gray-200 mx-10 hidden md:block"></div>
+            <a href="mailto:contact@kayonstudio.com" class="text-black font-black italic text-lg hover:opacity-50 transition-opacity uppercase underline underline-offset-8">Send Inquiry</a>
+        </div>
+    </footer>
+
     <script>
+        // Banner 與預載邏輯
         const bannerArtists = [
             { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
@@ -72,42 +120,51 @@
             { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
             { name: "RÆNE", img: "images/raenehero-banner.jpg" }
         ];
-
-        // 💡 圖片預載邏輯：讓輪播不卡頓
-        bannerArtists.forEach(artist => {
-            const img = new Image();
-            img.src = artist.img;
-        });
+        bannerArtists.forEach(a => { const i = new Image(); i.src = a.img; });
 
         let currentIndex = 0;
         const imgElement = document.getElementById('carousel-img');
         const nameElement = document.getElementById('artist-name');
 
         function nextSlide() {
-            if (!imgElement) return;
-            imgElement.style.opacity = '0'; 
-            
-            // 等待淡出效果進行到一半再換圖，視覺更順
+            imgElement.style.opacity = '0';
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % bannerArtists.length;
                 imgElement.src = bannerArtists[currentIndex].img;
                 nameElement.innerText = bannerArtists[currentIndex].name;
-                
-                // 確保圖片載入完成再顯示
-                imgElement.onload = () => {
-                    imgElement.style.opacity = '1';
-                };
-                
-                // 如果圖已經抓過了，onload 可能不會觸發，補一個保險
-                if(imgElement.complete) {
-                    imgElement.style.opacity = '1';
-                }
-            }, 800); 
+                imgElement.onload = () => imgElement.style.opacity = '1';
+                if(imgElement.complete) imgElement.style.opacity = '1';
+            }, 800);
         }
-
         setInterval(nextSlide, 5000);
 
-        // 藝人牆邏輯... (其餘部分同前)
+        // 8 位藝人
+        const talentsData = [
+            { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
+            { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
+            { name: "LILITHIUM", type: "AI", category: "ARTIST GROUP", img: "lilithium.webp" },
+            { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
+            { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
+            { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
+            { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL IP", img: "gaialyra.webp" },
+            { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" }
+        ];
+
+        function renderTalents() {
+            const grid = document.getElementById('talents-grid');
+            talentsData.forEach(talent => {
+                grid.innerHTML += `
+                    <div class="group animate-fadeIn">
+                        <div class="aspect-[3/4] bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                            ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 z-10">AI VIRTUAL</span>' : ''}
+                            <img src="images/talents/${talent.img}" class="w-full h-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x533?text=${talent.name}'">
+                        </div>
+                        <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
+                        <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase">${talent.category}</p>
+                    </div>`;
+            });
+        }
+        renderTalents();
     </script>
 </body>
 </html>
