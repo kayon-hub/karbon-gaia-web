@@ -16,15 +16,64 @@
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
     <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-xl font-black tracking-[0.3em] text-black">KARBØN X GAIA</div>
-            <nav class="hidden md:flex space-x-8 text-xs font-bold tracking-widest text-gray-500">
-                <a href="#" class="hover:text-black transition">ARTISTS</a>
-                <a href="#" class="hover:text-black transition">ABOUT</a>
-                <a href="#" class="hover:text-black transition">CONTACT</a>
-            </nav>
-        </div>
-    </header>
+       <div class="flex flex-wrap gap-4 mb-12">
+    <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-sm">ALL 全部</button>
+    <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-sm text-gray-600">AI VIRTUAL 虛擬藝人</button>
+    <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-sm text-gray-600">HUMAN 真人藝人</button>
+</div>
+
+<script>
+    const talentsData = [
+        // 真人藝人 (2位)
+        { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
+        { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
+        
+        // AI 虛擬藝人 (精選展示)
+        { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL", img: "gaialyra.webp" },
+        { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" },
+        { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
+        { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
+        { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
+        { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
+        { name: "LUYANGAN", type: "AI", category: "VIRTUAL IDOL", img: "luyangan.webp" },
+        
+        // 提示：剩下的 23 位 AI 藝人，你之後只要按這個格式補進來就好
+    ];
+
+    function renderTalents(filter = 'all') {
+        const grid = document.getElementById('talents-grid');
+        grid.innerHTML = ''; // 清空舊內容
+
+        const filtered = filter === 'all' ? talentsData : talentsData.filter(t => t.type === filter);
+
+        filtered.forEach(talent => {
+            grid.innerHTML += `
+                <div class="group animate-fadeIn">
+                    <div class="aspect-square rounded-2xl bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                        ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black/80 text-white text-[10px] px-2 py-1 rounded backdrop-blur-sm z-10">AI VIRTUAL</span>' : ''}
+                        
+                        <img src="images/talents/${talent.img}" 
+                             alt="${talent.name}" 
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+                             onerror="this.src='https://via.placeholder.com/500?text=COMING+SOON'">
+                    </div>
+                    <h3 class="text-2xl font-black text-black italic tracking-tighter">${talent.name}</h3>
+                    <p class="text-xs font-bold text-gray-400 mt-1 uppercase">${talent.category}</p>
+                    <button class="mt-4 text-[10px] font-black tracking-widest border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+                        CONTACT AVA FOR BOOKING
+                    </button>
+                </div>
+            `;
+        });
+    }
+
+    function filterTalents(type) {
+        renderTalents(type);
+    }
+
+    // 初始載入
+    renderTalents();
+</script>
 
     <section class="mt-20 relative w-full h-[80vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
         
