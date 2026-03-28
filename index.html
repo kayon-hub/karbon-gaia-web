@@ -7,7 +7,6 @@
     <meta name="description" content="KARBØN X GAIA 是一家前瞻性的娛樂公司，致力於創造超越傳統邊界的音樂、藝人和敘事。探索 LILITHIUM、NØVEX、NÄXER 等創新藝人專案。" />
     <meta name="keywords" content="K-POP, 華語流行, 娛樂公司, 音樂製作, 藝人經紀, LILITHIUM, NØVEX, NÄXER, AI音樂, 獨立藝人" />
     <meta name="author" content="KARBØN X GAIA ENTERTAINMENT" />
-    
     <meta property="og:title" content="KARBØN X GAIA - K-POP & 華語流行音樂娛樂公司" />
     <meta property="og:description" content="創造超越傳統邊界的音樂、藝人和敘事。探索我們的多元藝術專案。" />
     <meta property="og:type" content="website" />
@@ -22,6 +21,7 @@
         .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
+        /* 隱藏語言選擇器的原生外觀 */
         .lang-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
 </head>
@@ -43,10 +43,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" />
                     </svg>
-                    <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] hover:opacity-60 transition-opacity focus:outline-none cursor-pointer">
+                    <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] hover:opacity-60 focus:outline-none cursor-pointer">
                         <option value="zh-TW">中文</option>
                         <option value="en">EN</option>
-                        <option value="ko">KR</option>
                     </select>
                 </div>
             </div>
@@ -83,7 +82,7 @@
             </div>
 
             <div class="flex flex-wrap gap-3">
-                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">ALL</button>
+                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase">ALL 全部</button>
                 <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">AI VIRTUAL</button>
                 <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">HUMAN</button>
             </div>
@@ -96,13 +95,13 @@
     <section id="founder" class="bg-black text-white py-32 px-8">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div class="aspect-[4/5] bg-gray-900 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition duration-1000">
-                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-5xl tracking-tighter">KAYON</div>
+                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-5xl tracking-tighter uppercase">KAYON</div>
             </div>
             <div>
                 <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Visionary</h2>
                 <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase text-white">KAYON HUNG</h3>
                 <p class="text-gray-400 leading-relaxed mb-8 text-sm">
-                    作為 KARBØN X GAIA 的創辦人，KAYON 將音樂製作的直覺與 AI 技術的前瞻見解結合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。
+                    作為 KARBØN X GAIA 的創辦人，KAYON 將對音樂製作的熱愛與 AI 科技結合。致力於建構一個虛實共榮的全新娛樂宇宙，把故事變成歌。
                 </p>
                 <div class="h-[1px] w-20 bg-white/30"></div>
             </div>
@@ -110,19 +109,19 @@
     </section>
 
     <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+            <div>
                 <h3 class="text-3xl font-black mb-4 tracking-tight italic uppercase">Collaborate</h3>
                 <p class="text-gray-500 text-sm font-medium">Business & Booking: <span class="text-black font-bold uppercase">AVA (Manager)</span></p>
             </div>
-            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-10 py-4 font-black text-[10px] tracking-[0.2em] hover:bg-gray-800 transition-all uppercase text-center">
+            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-10 py-4 font-black text-[10px] tracking-[0.2em] hover:bg-gray-800 transition-all uppercase">
                 Send Inquiry
             </a>
         </div>
     </footer>
 
     <script>
-        /* --- Banner 輪播 (原版邏輯) --- */
+        /* --- Banner 輪播邏輯 --- */
         const bannerArtists = [
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
             { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -136,7 +135,9 @@
         let currentIndex = 0;
         const imgElement = document.getElementById('carousel-img');
         const nameElement = document.getElementById('artist-name');
+
         function nextSlide() {
+            if (!imgElement) return;
             imgElement.style.opacity = '0';
             setTimeout(() => {
                 currentIndex = (currentIndex + 1) % bannerArtists.length;
@@ -187,6 +188,7 @@
             renderTalents(type);
         }
 
+        // 初始化渲染
         renderTalents();
     </script>
 </body>
