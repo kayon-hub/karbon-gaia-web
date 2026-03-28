@@ -15,7 +15,7 @@
         html { scroll-behavior: smooth; }
         .banner-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 80%); z-index: 25; }
         
-        /* 💡 Banner 浮水印：使用黑色背景的 logo.png */
+        /* 💡 浮水印：使用 logo/logo.png */
         .logo-watermark {
             position: absolute;
             top: 50%;
@@ -23,18 +23,30 @@
             transform: translate(-50%, -50%);
             width: 80%;
             opacity: 0.05;
-            filter: brightness(0) invert(1); /* 轉為白色以配合深色背景 */
+            filter: brightness(0) invert(1); /* 配合 Banner 暗部轉為白色 */
             pointer-events: none;
             z-index: 20;
         }
+
+        /* 💡 Header LOGO 加深：強制轉為純黑 */
+        .header-logo {
+            height: 36px; /* 稍微調整高度以配合文字 */
+            width: auto;
+            filter: brightness(0); /* ✅ 這裡強制加深為純黑 */
+            transition: opacity 0.3s transition;
+        }
+        .header-logo:hover { opacity: 0.7; }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-5">
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-4">
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center">
-                <img src="logo/logo-main.png" alt="KARBØN X GAIA" class="h-11 w-auto">
+            <a href="#" class="flex items-center gap-4 group">
+                <img src="logo/logo-main.png" alt="KARBØN X GAIA LOGO" class="header-logo">
+                <span class="text-2xl font-black tracking-tighter italic text-black uppercase group-hover:text-gray-600 transition-colors">
+                    KARBØN X GAIA
+                </span>
             </a>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
                 <a href="#talents" class="hover:text-black transition-colors uppercase">藝人陣容</a>
@@ -96,6 +108,11 @@
         <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto text-sm">
             作為音樂創作者與公司的靈魂原點，KAYON＆Brian 將情感融入音符，讓每一首歌都成為心靈的慰藉。
         </p>
+    </section>
+
+    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center border-b border-gray-50">
+        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
+        <p class="text-gray-500 leading-relaxed font-light italic">"Merging AI Intelligence with Human Soul to create the future of Entertainment."</p>
     </section>
 
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32">
