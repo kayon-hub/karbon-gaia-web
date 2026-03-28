@@ -115,4 +115,78 @@
         </p>
     </section>
 
-    <section id="contact
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-32">
+        <div class="text-center mb-16">
+            <h2 class="text-6xl font-black mb-6 uppercase tracking-tight text-black">聯絡我們</h2>
+        </div>
+        <div class="space-y-6 max-w-3xl mx-auto">
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-300">
+                <h4 class="text-3xl font-black mb-1 text-black">Sky</h4>
+                <a href="mailto:karbonxgaia.sky@gmail.com" class="text-xl font-bold">karbonxgaia.sky@gmail.com</a>
+            </div>
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-300">
+                <h4 class="text-3xl font-black mb-1 text-black">Ava</h4>
+                <a href="mailto:karbonxgaiaxava@gmail.com" class="text-xl font-bold">karbonxgaiaxava@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 py-12 text-center border-t border-gray-100 text-[10px] font-black tracking-widest text-gray-400 uppercase">
+        © 2026 KARBØN X GAIA ENTERTAINMENT
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const talentsData = [
+                { name: "NØVEX", cat: "引領潮流的先鋒", img: "talents/novex.webp" },
+                { name: "NÄXER", cat: "最可靠的陪伴", img: "talents/naxer.webp" },
+                { name: "LILITHIUM", cat: "旗艦戰略企劃", img: "talents/lilithium.webp" },
+                { name: "VRAISY", cat: "跨維度舞台魅力", img: "talents/vraisy.webp" },
+                { name: "RÆNE", cat: "靈魂共創成員", img: "talents/raene.webp" },
+                { name: "EUNA", cat: "細膩療癒嗓音", img: "talents/euna.webp" },
+                { name: "JOAH", cat: "情緒價值創造", img: "talents/joah.webp" },
+                { name: "RAUN", cat: "真實存在的生命", img: "talents/raun.webp" },
+                { name: "GAIALYRA", cat: "探索維度邊界", img: "talents/gaialyra.webp" }
+            ];
+
+            const grid = document.getElementById('talents-grid');
+            if(grid) {
+                talentsData.forEach((talent, index) => {
+                    grid.innerHTML += `
+                        <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
+                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                                <img src="${talent.img}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
+                            </div>
+                            <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
+                            <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase tracking-widest">${talent.cat}</p>
+                        </div>`;
+                });
+            }
+
+            const bannerArtists = [
+                { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
+                { name: "EUNA", img: "images/eunahero-banner.jpg" },
+                { name: "NØVEX", img: "images/novexhero-banner.jpg" },
+                { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
+                { name: "JOAH", img: "images/joahhero-banner.jpg" }
+            ];
+            
+            let currentIndex = 0;
+            const imgElement = document.getElementById('carousel-img');
+            const nameElement = document.getElementById('artist-name');
+
+            function nextSlide() {
+                if(!imgElement) return;
+                imgElement.style.opacity = '0';
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % bannerArtists.length;
+                    imgElement.src = bannerArtists[currentIndex].img;
+                    nameElement.innerText = bannerArtists[currentIndex].name;
+                    imgElement.onload = () => imgElement.style.opacity = '1';
+                }, 800);
+            }
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
