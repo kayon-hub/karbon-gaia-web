@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden">
-                <img src="talents/luyangan.webp" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700" onerror="this.src='https://via.placeholder.com/800x800?text=LUYANGAN'">
+                <img src="talents/luyangan.webp" class="w-full h-full object-cover transition duration-700" onerror="this.src='https://via.placeholder.com/800x800?text=LUYANGAN'">
             </div>
         </div>
     </section>
@@ -94,6 +94,13 @@
         </div>
     </section>
 
+    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
+        <p class="text-gray-500 leading-relaxed text-sm md:text-lg max-w-2xl mx-auto font-light italic text-center">
+            "Merging AI Intelligence with Human Soul to create the future of Entertainment."
+        </p>
+    </section>
+
     <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6 text-center">
         <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter">聯絡我們</h3>
         <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-10">Management: <span class="text-black font-black">AVA</span></p>
@@ -102,7 +109,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 藝人資料 (路徑修正：talents/)
+            // 藝人資料
             const talentsData = [
                 { name: "NØVEX", type: "AI", category: "FOUNDING GROUP", img: "talents/novex.webp" },
                 { name: "NÄXER", type: "AI", category: "FOUNDING GROUP", img: "talents/naxer.webp" },
@@ -120,9 +127,9 @@
                 talentsData.forEach((talent, index) => {
                     grid.innerHTML += `
                         <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
-                            <div class="aspect-[3/4] bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
                                 ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 z-10">AI VIRTUAL</span>' : ''}
-                                <img src="${talent.img}" class="w-full h-full object-cover transition duration-700 grayscale hover:grayscale-0 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x533?text=${talent.name}'">
+                                <img src="${talent.img}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
                             </div>
                             <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
                             <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase">${talent.category}</p>
@@ -130,7 +137,7 @@
                 });
             }
 
-            // Banner 輪播 (路徑修正：根目錄)
+            // Banner 輪播邏輯
             const bannerArtists = [
                 { name: "劉揚安", img: "luyanganhero-banner.jpg" },
                 { name: "NØVEX", img: "novexhero-banner.jpg" },
