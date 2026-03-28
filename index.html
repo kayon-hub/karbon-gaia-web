@@ -147,3 +147,20 @@
             
             let currentIndex = 0;
             const imgElement = document.getElementById('carousel-img');
+            const nameElement = document.getElementById('artist-name');
+
+            function nextSlide() {
+                if(!imgElement) return;
+                imgElement.style.opacity = '0';
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % bannerArtists.length;
+                    imgElement.src = bannerArtists[currentIndex].img;
+                    nameElement.innerText = bannerArtists[currentIndex].name;
+                    imgElement.onload = () => imgElement.style.opacity = '1';
+                }, 800);
+            }
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
