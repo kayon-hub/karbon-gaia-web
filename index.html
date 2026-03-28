@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>KARBØN X GAIA ENTERTAINMENT</title>
+    <meta name="description" content="KARBØN X GAIA 是一家前瞻性的娛樂公司，致力於創造超越傳統邊界的音樂、藝人和敘事。探索 LILITHIUM、NØVEX、NÄXER 等創新藝人專案。" />
+    <meta name="keywords" content="K-POP, 華語流行, 娛樂公司, 音樂製作, 藝人經紀, LILITHIUM, NØVEX, NÄXER, AI音樂, 獨立藝人" />
+    <meta name="author" content="KARBØN X GAIA ENTERTAINMENT" />
+    
+    <meta property="og:title" content="KARBØN X GAIA - K-POP & 華語流行音樂娛樂公司" />
+    <meta property="og:description" content="創造超越傳統邊界的音樂、藝人和敘事。探索我們的多元藝術專案。" />
+    <meta property="og:type" content="website" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; }
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
         #carousel-img { transition: opacity 1.2s ease-in-out; }
         .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
@@ -18,9 +27,9 @@
 
     <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 px-8 py-4 flex justify-between items-center">
         <div class="text-xl font-black tracking-tighter italic">KARBØN X GAIA</div>
-        <div class="hidden md:flex gap-8 text-[10px] font-black tracking-widest uppercase">
-            <a href="#" class="hover:text-gray-500">Talents</a>
-            <a href="#" class="hover:text-gray-500">Contact</a>
+        <div class="hidden md:flex gap-8 text-[10px] font-black tracking-widest uppercase text-gray-500">
+            <a href="#talents" class="hover:text-black transition">Talents</a>
+            <a href="mailto:contact@kayonstudio.com" class="hover:text-black transition">Booking</a>
         </div>
     </header>
 
@@ -39,17 +48,17 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-24">
+    <section id="talents" class="max-w-7xl mx-auto px-6 py-24">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
-                <h2 class="text-5xl font-black mb-4 tracking-tighter italic">TALENTS & IPs</h2>
-                <p class="text-gray-400 font-bold text-xs tracking-widest uppercase">32 Artists • 29 AI Virtual / 2 Human / 1 Host</p>
+                <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black">TALENTS & IPs</h2>
+                <p class="text-gray-400 font-bold text-xs tracking-widest uppercase">32 Artists • 29 AI / 2 Human / 1 Host • 7 IPs</p>
             </div>
 
             <div class="flex flex-wrap gap-3">
                 <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase">ALL 全部</button>
-                <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase">AI VIRTUAL</button>
-                <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase">HUMAN</button>
+                <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase transition-all">AI VIRTUAL</button>
+                <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase transition-all">HUMAN</button>
             </div>
         </div>
 
@@ -60,17 +69,17 @@
     <footer class="bg-gray-50 py-20 border-t border-gray-100 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="text-center md:text-left">
-                <h3 class="text-2xl font-black mb-4 tracking-tight">MANAGEMENT & BOOKING</h3>
-                <p class="text-gray-500">藝人經紀窗口：AVA (經理)</p>
+                <h3 class="text-2xl font-black mb-4 tracking-tight italic">WORK WITH US</h3>
+                <p class="text-gray-500 text-sm">Manager & Booking: <span class="font-bold text-black uppercase">AVA</span></p>
             </div>
-            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-12 py-4 font-black text-xs tracking-widest hover:scale-105 transition-transform uppercase">
+            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-12 py-4 font-black text-[10px] tracking-widest hover:scale-105 transition-transform uppercase">
                 Contact via Email
             </a>
         </div>
     </footer>
 
     <script>
-        /* --- Banner 輪播邏輯 (原封不動) --- */
+        /* --- Banner 輪播邏輯 (原版保留) --- */
         const artists = [
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
             { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -95,7 +104,7 @@
         }
         setInterval(nextSlide, 5000);
 
-        /* --- 藝人網格渲染邏輯 --- */
+        /* --- 藝人資料與渲染邏輯 --- */
         const talentsData = [
             { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
             { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
@@ -106,11 +115,11 @@
             { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
             { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
             { name: "LUYANGAN", type: "AI", category: "VIRTUAL IDOL", img: "luyangan.webp" },
-            // 補足至 32 位的 Coming Soon 佔位
+            // 自動補齊 32 位預約位置
             ...Array.from({ length: 23 }, (_, i) => ({
                 name: `IP PROJECT ${i + 10}`,
                 type: "AI",
-                category: "UPCOMING ARTIST",
+                category: "UPCOMING PROJECT",
                 img: "coming-soon.webp"
             }))
         ];
@@ -125,7 +134,7 @@
                 grid.innerHTML += `
                     <div class="group animate-fadeIn">
                         <div class="aspect-[3/4] rounded-sm bg-gray-100 overflow-hidden mb-6 relative">
-                            ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black/90 text-white text-[8px] font-black px-2 py-1 tracking-widest z-10">AI VIRTUAL</span>' : ''}
+                            ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 tracking-widest z-10">AI VIRTUAL</span>' : ''}
                             <img src="images/talents/${talent.img}" 
                                  class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
                                  onerror="this.src='https://via.placeholder.com/600x800?text=K+X+G+PREVIEW'">
@@ -141,9 +150,7 @@
             renderTalents(type);
         }
 
-        // 初始執行
         renderTalents();
     </script>
-
 </body>
 </html>
