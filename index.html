@@ -21,7 +21,6 @@
         .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
-        /* 隱藏語言選擇器的原生外觀 */
         .lang-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
 </head>
@@ -37,6 +36,7 @@
                 <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
                 <a href="#talents" class="hover:text-black transition-colors uppercase">藝人</a>
                 <a href="#vision" class="hover:text-black transition-colors uppercase">理念</a>
+                <a href="#collab" class="hover:text-black transition-colors uppercase">協作</a>
                 <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡</a>
                 
                 <div class="flex items-center gap-1.5 pl-4 border-l border-gray-200">
@@ -82,7 +82,7 @@
             </div>
 
             <div class="flex flex-wrap gap-3">
-                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase">ALL 全部</button>
+                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">ALL 全部</button>
                 <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">AI VIRTUAL</button>
                 <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">HUMAN</button>
             </div>
@@ -101,7 +101,7 @@
                 <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Visionary</h2>
                 <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase text-white">KAYON HUNG</h3>
                 <p class="text-gray-400 leading-relaxed mb-8 text-sm">
-                    作為 KARBØN X GAIA 的創辦人，KAYON 將對音樂製作的熱愛與 AI 科技結合。致力於建構一個虛實共榮的全新娛樂宇宙，把故事變成歌。
+                    作為 KARBØN X GAIA 的創辦人，KAYON 將音樂製作的直覺與 AI 技術的前瞻見解結合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。
                 </p>
                 <div class="h-[1px] w-20 bg-white/30"></div>
             </div>
@@ -121,7 +121,7 @@
     </footer>
 
     <script>
-        /* --- Banner 輪播邏輯 --- */
+        /* --- Banner 輪播邏輯 (已加入 LuYangan) --- */
         const bannerArtists = [
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
             { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -130,8 +130,10 @@
             { name: "RAUN", img: "images/raunhero-banner.jpg" },
             { name: "GAIALYRA", img: "images/gaialyrahero-banner.jpg" },
             { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
-            { name: "RÆNE", img: "images/raenehero-banner.jpg" }
+            { name: "RÆNE", img: "images/raenehero-banner.jpg" },
+            { name: "LUYANGAN", img: "images/luyanganhero-banner.jpg" }
         ];
+        
         let currentIndex = 0;
         const imgElement = document.getElementById('carousel-img');
         const nameElement = document.getElementById('artist-name');
@@ -188,7 +190,6 @@
             renderTalents(type);
         }
 
-        // 初始化渲染
         renderTalents();
     </script>
 </body>
