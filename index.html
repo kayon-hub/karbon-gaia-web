@@ -16,71 +16,114 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; background-color: #ffffff; }
         #carousel-img { transition: opacity 1.2s ease-in-out; }
         .text-shadow-sm { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        html { scroll-behavior: smooth; }
+        .lang-select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
     </style>
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 px-8 py-4 flex justify-between items-center">
-        <div class="text-xl font-black tracking-tighter italic">KARBØN X GAIA</div>
-        <div class="hidden md:flex gap-8 text-[10px] font-black tracking-widest uppercase text-gray-500">
-            <a href="#talents" class="hover:text-black transition">Talents</a>
-            <a href="mailto:contact@kayonstudio.com" class="hover:text-black transition">Booking</a>
-        </div>
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-5">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-xl font-black tracking-tighter italic text-black uppercase">
+                KARBØN X GAIA
+            </div>
+
+            <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
+                <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
+                <a href="#talents" class="hover:text-black transition-colors uppercase">藝人</a>
+                <a href="#vision" class="hover:text-black transition-colors uppercase">理念</a>
+                <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡</a>
+                
+                <div class="flex items-center gap-1.5 pl-4 border-l border-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" />
+                    </svg>
+                    <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] hover:opacity-60 transition-opacity focus:outline-none cursor-pointer">
+                        <option value="zh-TW">中文</option>
+                        <option value="en">EN</option>
+                        <option value="ko">KR</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="mt-20 relative w-full h-[80vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
+    <section class="mt-20 relative w-full h-[85vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-12">
         <div class="absolute inset-0 flex items-start justify-center">
             <img id="carousel-img" 
                  src="images/eunahero-banner.jpg" 
                  class="w-full h-full object-cover object-top opacity-100 z-10" 
                  alt="Artist">
-            <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+            <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black to-transparent z-20"></div>
         </div>
         <div class="relative z-30 text-center">
             <h2 id="artist-tag" class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase text-shadow-sm">FEATURED ARTIST</h2>
-            <h1 id="artist-name" class="text-white text-3xl md:text-4xl font-bold tracking-[0.2em] uppercase text-shadow-sm">EUNA</h1>
-            <div class="w-8 h-[1px] bg-white/40 mx-auto mt-4"></div>
+            <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase text-shadow-sm italic">EUNA</h1>
+            <div class="w-12 h-[1px] bg-white/40 mx-auto mt-6"></div>
         </div>
     </section>
 
-    <section id="talents" class="max-w-7xl mx-auto px-6 py-24">
+    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
+        <p class="text-gray-500 leading-relaxed text-sm md:text-lg max-w-2xl mx-auto font-light italic">
+            "Merging AI Intelligence with Human Soul to create the future of Entertainment."
+        </p>
+    </section>
+
+    <section id="talents" class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-50">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
-                <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black">TALENTS & IPs</h2>
-                <p class="text-gray-400 font-bold text-xs tracking-widest uppercase">32 Artists • 29 AI / 2 Human / 1 Host • 7 IPs</p>
+                <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black uppercase">Key IPs</h2>
+                <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase">9 Featured Artists & Groups • Hybrid Entertainment</p>
             </div>
 
             <div class="flex flex-wrap gap-3">
-                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase">ALL 全部</button>
-                <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase transition-all">AI VIRTUAL</button>
-                <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 hover:bg-black hover:text-white transition rounded-full font-bold text-[10px] tracking-widest text-gray-500 uppercase transition-all">HUMAN</button>
+                <button onclick="filterTalents('all')" class="px-6 py-2 bg-black text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">ALL</button>
+                <button onclick="filterTalents('AI')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">AI VIRTUAL</button>
+                <button onclick="filterTalents('Human')" class="px-6 py-2 bg-gray-100 text-gray-500 hover:bg-black hover:text-white rounded-full font-bold text-[10px] tracking-widest uppercase transition-all">HUMAN</button>
             </div>
         </div>
 
-        <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-20">
+        <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             </div>
     </section>
 
-    <footer class="bg-gray-50 py-20 border-t border-gray-100 px-6">
+    <section id="founder" class="bg-black text-white py-32 px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="aspect-[4/5] bg-gray-900 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition duration-1000">
+                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-5xl tracking-tighter">KAYON</div>
+            </div>
+            <div>
+                <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Visionary</h2>
+                <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase text-white">KAYON HUNG</h3>
+                <p class="text-gray-400 leading-relaxed mb-8 text-sm">
+                    作為 KARBØN X GAIA 的創辦人，KAYON 將音樂製作的直覺與 AI 技術的前瞻見解結合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。
+                </p>
+                <div class="h-[1px] w-20 bg-white/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="text-center md:text-left">
-                <h3 class="text-2xl font-black mb-4 tracking-tight italic">WORK WITH US</h3>
-                <p class="text-gray-500 text-sm">Manager & Booking: <span class="font-bold text-black uppercase">AVA</span></p>
+                <h3 class="text-3xl font-black mb-4 tracking-tight italic uppercase">Collaborate</h3>
+                <p class="text-gray-500 text-sm font-medium">Business & Booking: <span class="text-black font-bold uppercase">AVA (Manager)</span></p>
             </div>
-            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-12 py-4 font-black text-[10px] tracking-widest hover:scale-105 transition-transform uppercase">
-                Contact via Email
+            <a href="mailto:contact@kayonstudio.com" class="bg-black text-white px-10 py-4 font-black text-[10px] tracking-[0.2em] hover:bg-gray-800 transition-all uppercase text-center">
+                Send Inquiry
             </a>
         </div>
     </footer>
 
     <script>
-        /* --- Banner 輪播邏輯 (原版保留) --- */
-        const artists = [
+        /* --- Banner 輪播 (原版邏輯) --- */
+        const bannerArtists = [
             { name: "EUNA", img: "images/eunahero-banner.jpg" },
             { name: "NØVEX", img: "images/novexhero-banner.jpg" },
             { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
@@ -96,32 +139,25 @@
         function nextSlide() {
             imgElement.style.opacity = '0';
             setTimeout(() => {
-                currentIndex = (currentIndex + 1) % artists.length;
-                imgElement.src = artists[currentIndex].img;
-                nameElement.innerText = artists[currentIndex].name;
+                currentIndex = (currentIndex + 1) % bannerArtists.length;
+                imgElement.src = bannerArtists[currentIndex].img;
+                nameElement.innerText = bannerArtists[currentIndex].name;
                 imgElement.style.opacity = '1';
             }, 1200);
         }
         setInterval(nextSlide, 5000);
 
-        /* --- 藝人資料與渲染邏輯 --- */
+        /* --- 9 格藝人牆資料 --- */
         const talentsData = [
             { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
             { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
-            { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL", img: "gaialyra.webp" },
+            { name: "LILITHIUM", type: "AI", category: "ARTIST GROUP / 團體", img: "lilithium.webp" },
+            { name: "NOVEX", type: "AI", category: "ARTIST GROUP / 團體", img: "novex.webp" },
+            { name: "NAXER", type: "AI", category: "ARTIST GROUP / 團體", img: "naxer.webp" },
+            { name: "VRAISY", type: "AI", category: "ARTIST GROUP / 團體", img: "vraisy.webp" },
+            { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL IP", img: "gaialyra.webp" },
             { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" },
-            { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
-            { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
-            { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
-            { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
-            { name: "LUYANGAN", type: "AI", category: "VIRTUAL IDOL", img: "luyangan.webp" },
-            // 自動補齊 32 位預約位置
-            ...Array.from({ length: 23 }, (_, i) => ({
-                name: `IP PROJECT ${i + 10}`,
-                type: "AI",
-                category: "UPCOMING PROJECT",
-                img: "coming-soon.webp"
-            }))
+            { name: "RAENE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" }
         ];
 
         function renderTalents(filter = 'all') {
@@ -132,15 +168,16 @@
 
             filtered.forEach(talent => {
                 grid.innerHTML += `
-                    <div class="group animate-fadeIn">
-                        <div class="aspect-[3/4] rounded-sm bg-gray-100 overflow-hidden mb-6 relative">
+                    <div class="group animate-fadeIn cursor-pointer">
+                        <div class="aspect-[3/4] rounded-sm bg-gray-50 overflow-hidden mb-6 relative border border-gray-100">
                             ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 tracking-widest z-10">AI VIRTUAL</span>' : ''}
                             <img src="images/talents/${talent.img}" 
                                  class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"
-                                 onerror="this.src='https://via.placeholder.com/600x800?text=K+X+G+PREVIEW'">
+                                 onerror="this.src='https://via.placeholder.com/600x800?text=${talent.name}'">
                         </div>
-                        <h3 class="text-2xl font-black text-black italic tracking-tighter uppercase">${talent.name}</h3>
+                        <h3 class="text-3xl font-black text-black italic tracking-tighter uppercase">${talent.name}</h3>
                         <p class="text-[10px] font-bold text-gray-400 mt-2 tracking-widest uppercase">${talent.category}</p>
+                        <div class="h-[1px] w-4 bg-black mt-4 transition-all group-hover:w-12"></div>
                     </div>
                 `;
             });
