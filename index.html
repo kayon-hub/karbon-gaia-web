@@ -22,11 +22,12 @@
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-xl font-black tracking-tighter italic text-black uppercase">KARBØN X GAIA</div>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
-                <a href="#talents" class="hover:text-black transition-colors uppercase">藝人</a>
+                <a href="#talents" class="hover:text-black transition-colors uppercase">藝人陣容</a>
                 <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
                 <a href="#host" class="hover:text-black transition-colors uppercase">主持人</a>
                 <a href="#vision" class="hover:text-black transition-colors uppercase">理念</a>
                 <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡</a>
+                
                 <div class="flex items-center gap-1.5 pl-4 border-l border-gray-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" /></svg>
                     <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] focus:outline-none cursor-pointer"><option>中文</option><option>EN</option></select>
@@ -48,10 +49,11 @@
     </section>
 
     <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
-        <div class="mb-20">
+        <div class="mb-16">
             <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black uppercase">Artist Matrix</h2>
-            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic">8 Global IP Projects</p>
+            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic border-l-2 border-black pl-4">8 Core IP Projects</p>
         </div>
+
         <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-24">
             </div>
     </section>
@@ -97,32 +99,24 @@
         </div>
     </section>
 
-    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center border-t border-gray-50">
-        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
-        <p class="text-gray-500 leading-relaxed text-sm md:text-lg max-w-2xl mx-auto font-light italic">
-            "Merging AI Intelligence with Human Soul to create the future of Entertainment."
-        </p>
-    </section>
-
-    <footer id="contact" class="bg-gray-50 py-20 border-t border-gray-100 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Contact: <span class="text-black">AVA</span></p>
-            <a href="mailto:contact@kayonstudio.com" class="text-black font-black italic text-lg hover:opacity-50 transition-opacity uppercase underline underline-offset-8">Send Inquiry</a>
-        </div>
+    <footer id="contact" class="bg-gray-50 py-20 border-t border-gray-100 px-6 text-center">
+        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-6 text-center">Management: <span class="text-black">AVA</span></p>
+        <a href="mailto:contact@kayonstudio.com" class="text-black font-black italic text-2xl hover:opacity-50 transition-opacity uppercase underline underline-offset-8">Send Inquiry</a>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Banner 輪播與預載
+            // 1. Banner 輪播順序也同步微調
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
-                { name: "EUNA", img: "images/eunahero-banner.jpg" },
                 { name: "NØVEX", img: "images/novexhero-banner.jpg" },
                 { name: "NÄXER", img: "images/naxerhero-banner.jpg" },
+                { name: "EUNA", img: "images/eunahero-banner.jpg" },
                 { name: "JOAH", img: "images/joahhero-banner.jpg" },
+                { name: "LILITHIUM", img: "images/lilithiumhero-banner.jpg" },
+                { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
                 { name: "RAUN", img: "images/raunhero-banner.jpg" },
                 { name: "GAIALYRA", img: "images/gaialyrahero-banner.jpg" },
-                { name: "VRAISY", img: "images/vraisyhero-banner.jpg" },
                 { name: "RÆNE", img: "images/raenehero-banner.jpg" }
             ];
 
@@ -145,23 +139,26 @@
             }
             setInterval(nextSlide, 5000);
 
-            // 2. 8 位藝人資料
+            // 2. 藝人資料 (依照創始順序與分類排序)
             const talentsData = [
+                // 創始與團體成員 (NOVEX, NAXER, LILITHIUM, VRAISY, RAENE)
+                { name: "NØVEX", type: "AI", category: "FOUNDING GROUP / 團體", img: "novex.webp" },
+                { name: "NÄXER", type: "AI", category: "FOUNDING GROUP / 團體", img: "naxer.webp" },
+                { name: "LILITHIUM", type: "AI", category: "ARTIST GROUP / 團體", img: "lilithium.webp" },
+                { name: "VRAISY", type: "AI", category: "ARTIST GROUP / 團體", img: "vraisy.webp" },
+                { name: "RÆNE", type: "AI", category: "VIRTUAL IDOL", img: "raene.webp" },
+                // SOLO 成員 (EUNA, JOAH, RAUN, GAIALYRA)
                 { name: "EUNA", type: "Human", category: "SOLO ARTIST", img: "euna.webp" },
                 { name: "JOAH", type: "Human", category: "SOLO ARTIST", img: "joah.webp" },
-                { name: "LILITHIUM", type: "AI", category: "ARTIST GROUP", img: "lilithium.webp" },
-                { name: "NOVEX", type: "AI", category: "ARTIST GROUP", img: "novex.webp" },
-                { name: "NAXER", type: "AI", category: "ARTIST GROUP", img: "naxer.webp" },
-                { name: "VRAISY", type: "AI", category: "ARTIST GROUP", img: "vraisy.webp" },
-                { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL IP", img: "gaialyra.webp" },
-                { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" }
+                { name: "RAUN", type: "AI", category: "VIRTUAL IDOL", img: "raun.webp" },
+                { name: "GAIALYRA", type: "AI", category: "EXPERIMENTAL IP", img: "gaialyra.webp" }
             ];
 
             const grid = document.getElementById('talents-grid');
             if(grid) {
-                talentsData.forEach(talent => {
+                talentsData.forEach((talent, index) => {
                     grid.innerHTML += `
-                        <div class="group animate-fadeIn" style="animation-delay: 100ms">
+                        <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
                             <div class="aspect-[3/4] bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
                                 ${talent.type === 'AI' ? '<span class="absolute top-4 right-4 bg-black text-white text-[8px] font-black px-2 py-1 z-10">AI VIRTUAL</span>' : ''}
                                 <img src="images/talents/${talent.img}" class="w-full h-full object-cover transition duration-700 grayscale hover:grayscale-0 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/400x533?text=${talent.name}'">
