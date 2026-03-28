@@ -13,19 +13,17 @@
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
-        
-        /* 💡 層次優化：讓文字與浮水印之間有景深感 */
         .banner-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 80%); z-index: 25; }
         
-        /* 💡 Banner 5% 透明度白色浮水印 LOGO */
+        /* 💡 Banner 浮水印：使用黑色背景的 logo.png */
         .logo-watermark {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
-            opacity: 0.05; /* 5% 透明度，營造被守護的沉浸感 */
-            filter: brightness(0) invert(1); /* 將黑色 LOGO 轉為白色 */
+            opacity: 0.05;
+            filter: brightness(0) invert(1); /* 轉為白色以配合深色背景 */
             pointer-events: none;
             z-index: 20;
         }
@@ -36,7 +34,7 @@
     <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-5">
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center">
-                <img src="KARBONXGAIA_LOGO_black_fix-removebg-preview.png" alt="KARBØN X GAIA" class="h-11 w-auto">
+                <img src="logo/logo-main.png" alt="KARBØN X GAIA" class="h-11 w-auto">
             </a>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
                 <a href="#talents" class="hover:text-black transition-colors uppercase">藝人陣容</a>
@@ -51,7 +49,7 @@
     <section class="mt-28 relative w-full h-[75vh] md:h-[90vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-16">
         <div class="absolute inset-0 flex justify-center">
             <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-top opacity-100" alt="Artist">
-            <img src="KARBONXGAIA_LOGO_black_fix-removebg-preview.png" class="logo-watermark hidden md:block" alt="Watermark">
+            <img src="logo/logo.png" class="logo-watermark hidden md:block" alt="Watermark">
             <div class="absolute inset-0 banner-overlay"></div>
         </div>
         <div class="relative z-30 text-center px-4 w-full max-w-4xl">
@@ -134,7 +132,7 @@
                 { name: "EUNA", cat: "細膩療癒嗓音", img: "talents/euna.webp" },
                 { name: "JOAH", cat: "情緒價值創造", img: "talents/joah.webp" },
                 { name: "RAUN", cat: "真實存在的生命", img: "talents/raun.webp" },
-                { name: "GAIALYRA", cat: "探索維度邊際", img: "talents/gaialyra.webp" }
+                { name: "GAIALYRA", cat: "探索維度邊界", img: "talents/gaialyra.webp" }
             ];
 
             const grid = document.getElementById('talents-grid');
