@@ -13,16 +13,18 @@
         .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         html { scroll-behavior: smooth; }
-        .banner-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 80%); }
         
-        /* 💡 隱藏版 LOGO 水印樣式 */
+        /* 💡 層次優化：讓文字與浮水印之間有景深感 */
+        .banner-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 80%); z-index: 25; }
+        
+        /* 💡 Banner 5% 透明度白色浮水印 LOGO */
         .logo-watermark {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
-            opacity: 0.05; /* 極低透明度，若隱若現才有質感 */
+            opacity: 0.05; /* 5% 透明度，營造被守護的沉浸感 */
             filter: brightness(0) invert(1); /* 將黑色 LOGO 轉為白色 */
             pointer-events: none;
             z-index: 20;
@@ -31,10 +33,10 @@
 </head>
 <body class="bg-white text-gray-900 overflow-x-hidden">
 
-    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-4">
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-md z-[100] border-b border-gray-100 px-8 py-5">
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center">
-                <img src="KARBONXGAIA_LOGO_black_fix-removebg-preview.png" alt="KARBØN X GAIA" class="h-10 w-auto">
+                <img src="KARBONXGAIA_LOGO_black_fix-removebg-preview.png" alt="KARBØN X GAIA" class="h-11 w-auto">
             </a>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
                 <a href="#talents" class="hover:text-black transition-colors uppercase">藝人陣容</a>
@@ -46,11 +48,11 @@
         </nav>
     </header>
 
-    <section class="mt-24 relative w-full h-[75vh] md:h-[90vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-16">
+    <section class="mt-28 relative w-full h-[75vh] md:h-[90vh] bg-black overflow-hidden flex flex-col items-center justify-end pb-16">
         <div class="absolute inset-0 flex justify-center">
             <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-top opacity-100" alt="Artist">
             <img src="KARBONXGAIA_LOGO_black_fix-removebg-preview.png" class="logo-watermark hidden md:block" alt="Watermark">
-            <div class="absolute inset-0 banner-overlay z-25"></div>
+            <div class="absolute inset-0 banner-overlay"></div>
         </div>
         <div class="relative z-30 text-center px-4 w-full max-w-4xl">
             <h2 class="text-white/70 text-[10px] tracking-[0.6em] font-medium mb-4 uppercase">FEATURED ARTIST</h2>
@@ -85,7 +87,7 @@
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden">
+            <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden relative border border-gray-100">
                 <img src="talents/luyangan.webp" class="w-full h-full object-cover">
             </div>
         </div>
@@ -96,10 +98,6 @@
         <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto text-sm">
             作為音樂創作者與公司的靈魂原點，KAYON＆Brian 將情感融入音符，讓每一首歌都成為心靈的慰藉。
         </p>
-        <div id="vision" class="mt-20">
-            <h4 class="text-xl font-black mb-4 tracking-[0.3em] uppercase italic">Vision / 理念</h4>
-            <p class="text-white/60 font-light italic text-sm">"Merging AI Intelligence with Human Soul to create the future of Entertainment."</p>
-        </div>
     </section>
 
     <section id="contact" class="max-w-4xl mx-auto px-6 py-32">
@@ -108,12 +106,12 @@
             <p class="text-gray-500 font-medium">有任何合作、媒體事宜或其他事項，歡迎與我們聯繫</p>
         </div>
         <div class="space-y-6">
-            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-300">
                 <h4 class="text-3xl font-black mb-1">Sky</h4>
                 <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人</p>
                 <a href="mailto:karbonxgaia.sky@gmail.com" class="text-lg font-bold hover:underline">karbonxgaia.sky@gmail.com</a>
             </div>
-            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+            <div class="p-10 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all duration-300">
                 <h4 class="text-3xl font-black mb-1">Ava</h4>
                 <p class="text-gray-400 font-medium mb-6 italic">藝人經紀人</p>
                 <a href="mailto:karbonxgaiaxava@gmail.com" class="text-lg font-bold hover:underline">karbonxgaiaxava@gmail.com</a>
@@ -127,7 +125,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 藝人矩陣數據
             const talentsData = [
                 { name: "NØVEX", cat: "引領潮流的先鋒", img: "talents/novex.webp" },
                 { name: "NÄXER", cat: "最可靠的陪伴", img: "talents/naxer.webp" },
@@ -137,7 +134,7 @@
                 { name: "EUNA", cat: "細膩療癒嗓音", img: "talents/euna.webp" },
                 { name: "JOAH", cat: "情緒價值創造", img: "talents/joah.webp" },
                 { name: "RAUN", cat: "真實存在的生命", img: "talents/raun.webp" },
-                { name: "GAIALYRA", cat: "探索維度邊界", img: "talents/gaialyra.webp" }
+                { name: "GAIALYRA", cat: "探索維度邊際", img: "talents/gaialyra.webp" }
             ];
 
             const grid = document.getElementById('talents-grid');
@@ -145,8 +142,8 @@
                 talentsData.forEach((talent, index) => {
                     grid.innerHTML += `
                         <div class="group animate-fadeIn" style="animation-delay: ${index * 100}ms">
-                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 border border-gray-100">
-                                <img src="${talent.img}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
+                            <div class="aspect-square bg-gray-50 overflow-hidden mb-6 border border-gray-100 relative">
+                                <img src="${talent.img}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
                             </div>
                             <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
                             <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase tracking-widest">${talent.cat}</p>
@@ -154,7 +151,6 @@
                 });
             }
 
-            // Banner 輪播邏輯
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
                 { name: "EUNA", img: "images/eunahero-banner.jpg" },
