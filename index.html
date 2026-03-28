@@ -22,11 +22,12 @@
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-xl font-black tracking-tighter italic text-black uppercase">KARBØN X GAIA</div>
             <div class="flex items-center gap-6 md:gap-8 text-[11px] font-bold tracking-widest text-gray-500">
-                <a href="#talents" class="hover:text-black transition-colors uppercase">藝人</a>
-                <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
+                <a href="#talents" class="hover:text-black transition-colors uppercase">藝人陣容</a>
                 <a href="#host" class="hover:text-black transition-colors uppercase">主持人</a>
+                <a href="#founder" class="hover:text-black transition-colors uppercase">創辦人</a>
                 <a href="#vision" class="hover:text-black transition-colors uppercase">理念</a>
-                <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡</a>
+                <a href="#contact" class="hover:text-black transition-colors uppercase">聯絡我們</a>
+                
                 <div class="flex items-center gap-1.5 pl-4 border-l border-gray-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" /></svg>
                     <select class="lang-select bg-transparent border-none text-black font-bold text-[10px] focus:outline-none cursor-pointer"><option>中文</option><option>EN</option></select>
@@ -49,45 +50,29 @@
 
     <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
         <div class="mb-16">
-            <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black uppercase">Artist Matrix</h2>
-            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic border-l-2 border-black pl-4">8 Strategic IP Projects</p>
+            <span class="text-[10px] font-black text-gray-400 tracking-[0.4em] uppercase">Artist Matrix</span>
+            <h2 class="text-5xl font-black mb-4 tracking-tighter italic text-black uppercase mt-2">藝人陣容</h2>
         </div>
         <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-24">
             </div>
     </section>
 
-    <section id="founder" class="bg-black text-white py-32 px-8">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-            <div class="aspect-[4/5] bg-gray-900 rounded-sm overflow-hidden border border-white/5">
-                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-5xl uppercase text-center px-4">KAYON HUNG</div>
-            </div>
-            <div>
-                <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Visionary</h2>
-                <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">KAYON HUNG</h3>
-                <p class="text-gray-400 leading-relaxed mb-8 text-sm">
-                    創辦人 KAYON 將音樂製作的直覺與 AI 前瞻技術融合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。
-                </p>
-                <div class="h-[1px] w-20 bg-white/30"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="host" class="max-w-7xl mx-auto px-6 py-32">
+    <section id="host" class="max-w-7xl mx-auto px-6 py-32 border-t border-gray-50">
         <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
             <div class="w-full md:w-1/2">
                 <span class="text-[10px] font-bold text-gray-400 tracking-[0.4em] uppercase">Executive Host</span>
                 <h2 class="text-6xl font-black italic tracking-tighter mt-4 mb-8 uppercase text-black">劉揚安 LUYANGAN</h2>
                 <p class="text-gray-500 leading-relaxed mb-10 text-lg font-light">
-                    品牌核心主持人，跨越 Podcast 與 YouTube 領域，以深度的內容創作為 KARBØN X GAIA 提供持續的品牌發聲。
+                    品牌首席主持人，跨越 Podcast 與 YouTube 領域，以深度的內容創作為 KARBØN X GAIA 提供持續的品牌發聲。
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
                         <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Listen on</span>
-                        <span class="text-xl font-black group-hover:text-white italic">PODCAST CHANNEL</span>
+                        <span class="text-xl font-black group-hover:text-white italic underline">PODCAST CHANNEL</span>
                     </a>
                     <a href="#" class="group flex flex-col p-6 bg-gray-50 hover:bg-black transition-all">
                         <span class="text-[8px] font-black group-hover:text-white/40 mb-2 uppercase tracking-widest">Watch on</span>
-                        <span class="text-xl font-black group-hover:text-white italic">YOUTUBE SHOW</span>
+                        <span class="text-xl font-black group-hover:text-white italic underline">YOUTUBE SHOW</span>
                     </a>
                 </div>
             </div>
@@ -97,9 +82,42 @@
         </div>
     </section>
 
+    <section id="founder" class="bg-black text-white py-32 px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="aspect-[4/5] bg-gray-900 rounded-sm overflow-hidden border border-white/5">
+                <div class="w-full h-full flex items-center justify-center text-gray-800 font-black italic text-4xl uppercase px-4">KAYON STUDIO</div>
+            </div>
+            <div>
+                <h2 class="text-[10px] tracking-[0.5em] text-white/40 mb-4 uppercase">The Visionary</h2>
+                <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase text-white">創辦人 KAYON</h3>
+                <p class="text-gray-400 leading-relaxed mb-8 text-sm">
+                    創辦人 KAYON 將音樂製作的直覺與 AI 前瞻技術融合。致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。
+                </p>
+                <div class="h-[1px] w-20 bg-white/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
+        <p class="text-gray-500 leading-relaxed text-sm md:text-lg max-w-2xl mx-auto font-light italic">
+            "Merging AI Intelligence with Human Soul to create the future of Entertainment."
+        </p>
+    </section>
+
+    <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter">聯絡我們</h3>
+            <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-10">Manager: <span class="text-black">AVA</span></p>
+            <a href="mailto:contact@kayonstudio.com" class="inline-block bg-black text-white px-12 py-5 font-black italic text-lg hover:bg-gray-800 transition-all uppercase">
+                Send Inquiry / 合作洽談
+            </a>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 1. Banner 資料
+            // Banner 輪播與預載
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
                 { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -124,7 +142,7 @@
             }
             setInterval(nextSlide, 5000);
 
-            // 2. 藝人資料 - 依照你的指定順序
+            // 藝人資料 (依照創始與 SOLO 順序)
             const talentsData = [
                 { name: "NØVEX", type: "AI", category: "FOUNDING GROUP", img: "novex.webp" },
                 { name: "NÄXER", type: "AI", category: "FOUNDING GROUP", img: "naxer.webp" },
