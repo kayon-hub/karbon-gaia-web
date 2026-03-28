@@ -35,16 +35,17 @@
             <img id="carousel-img" src="images/luyanganhero-banner.jpg" class="w-full h-full object-cover object-top opacity-100 z-10" alt="Artist">
             <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-black to-transparent z-20"></div>
         </div>
-        <div class="relative z-30 text-center">
-            <h2 class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">FEATURED ARTIST</h2>
+        <div class="relative z-30 text-center px-4">
+            <h2 class="text-white/60 text-[10px] tracking-[0.8em] font-light mb-2 uppercase">Featured Artist</h2>
             <h1 id="artist-name" class="text-white text-4xl md:text-6xl font-black tracking-[0.2em] uppercase italic text-shadow-sm">劉揚安</h1>
-            <div class="w-12 h-[1px] bg-white/40 mx-auto mt-6"></div>
+            <p class="text-white/80 text-xs md:text-sm mt-4 font-light tracking-[0.1em]">「用科技承載靈魂，創造跨越維度的溫暖陪伴」</p>
         </div>
     </section>
 
     <section id="talents" class="max-w-7xl mx-auto px-6 py-32">
         <div class="mb-16">
-            <h2 class="text-5xl font-black tracking-tighter italic text-black uppercase">藝人陣容</h2>
+            <h2 class="text-5xl font-black tracking-tighter italic text-black uppercase">Artist Matrix</h2>
+            <p class="text-gray-400 font-bold text-[10px] tracking-widest uppercase italic mt-2">賦予生命，而非創造內容</p>
         </div>
         <div id="talents-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             </div>
@@ -54,7 +55,7 @@
         <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
             <div class="w-full md:w-1/2">
                 <h2 class="text-5xl font-black italic tracking-tighter mb-2 uppercase text-black">劉揚安 - 揚安在這</h2>
-                <span class="text-[10px] font-bold text-gray-400 tracking-[0.4em] uppercase mb-8 block">Official Executive Host</span>
+                <p class="text-gray-500 leading-relaxed mb-8 text-lg font-light italic">「他不僅是腦海中的人物，更是透過音樂與視覺走進現實生活的真實生命。」</p>
                 
                 <div class="grid grid-cols-2 gap-4">
                     <a href="https://youtube.com/@yangan_here?themeRefresh=1" target="_blank" class="group p-6 bg-gray-50 hover:bg-black transition-all">
@@ -76,43 +77,39 @@
                 </div>
             </div>
             <div class="w-full md:w-1/2 aspect-square bg-gray-50 overflow-hidden">
-                <img src="talents/luyangan.webp" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/1020x1020?text=LUYANGAN'">
+                <img src="talents/luyangan.webp" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
     <section id="founder" class="bg-black text-white py-32 px-8">
         <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">創辦人 KAYON</h3>
-            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">致力於建構一個讓虛擬與真實藝人共榮的全新娛樂宇宙，把故事變成歌。</p>
+            <h3 class="text-5xl font-black italic tracking-tighter mb-8 uppercase">創辦人 KAYON HUNG</h3>
+            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto text-sm">
+                作為音樂創作者與 KXG ENT 的靈魂原點，KAYON 將情感融入音符，讓每一首歌都成為心靈的慰藉。
+            </p>
             <div class="h-[1px] w-20 bg-white/30 mx-auto"></div>
         </div>
     </section>
 
-    <section id="vision" class="max-w-4xl mx-auto px-6 py-32 text-center">
-        <h2 class="text-2xl font-black mb-8 tracking-[0.3em] text-black italic uppercase">Vision / 理念</h2>
-        <p class="text-gray-500 leading-relaxed font-light italic">"Merging AI Intelligence with Human Soul to create the future of Entertainment."</p>
-    </section>
-
     <footer id="contact" class="bg-gray-50 py-24 border-t border-gray-100 px-6 text-center">
-        <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter underline underline-offset-8">聯絡我們</h3>
-        <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-10">Manager: AVA</p>
+        <h3 class="text-3xl font-black italic mb-6 uppercase tracking-tighter">聯絡我們</h3>
+        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-4">Manager: AVA / SKY</p>
         <a href="mailto:contact@kayonstudio.com" class="inline-block bg-black text-white px-12 py-5 font-black italic text-lg hover:bg-gray-800 transition-all uppercase">合作洽談</a>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 藝人矩陣資料 (依照排位)
             const talentsData = [
-                { name: "NØVEX", cat: "FOUNDING GROUP", img: "talents/novex.webp" },
-                { name: "NÄXER", cat: "FOUNDING GROUP", img: "talents/naxer.webp" },
-                { name: "LILITHIUM", cat: "ARTIST GROUP", img: "talents/lilithium.webp" },
-                { name: "VRAISY", cat: "ARTIST GROUP", img: "talents/vraisy.webp" },
-                { name: "RÆNE", cat: "VIRTUAL IDOL", img: "talents/raene.webp" },
-                { name: "EUNA", cat: "SOLO ARTIST", img: "talents/euna.webp" },
-                { name: "JOAH", cat: "SOLO ARTIST", img: "talents/joah.webp" },
-                { name: "RAUN", cat: "VIRTUAL IDOL", img: "talents/raun.webp" },
-                { name: "GAIALYRA", cat: "EXPERIMENTAL IP", img: "talents/gaialyra.webp" }
+                { name: "NØVEX", cat: "引領潮流的先鋒", img: "talents/novex.webp" },
+                { name: "NÄXER", cat: "最可靠的陪伴", img: "talents/naxer.webp" },
+                { name: "LILITHIUM", cat: "旗艦戰略企劃", img: "talents/lilithium.webp" },
+                { name: "VRAISY", cat: "跨維度舞台魅力", img: "talents/vraisy.webp" },
+                { name: "RÆNE", cat: "靈魂共創成員", img: "talents/raene.webp" },
+                { name: "EUNA", cat: "細膩療癒嗓音", img: "talents/euna.webp" },
+                { name: "JOAH", cat: "情緒價值創造", img: "talents/joah.webp" },
+                { name: "RAUN", cat: "真實存在的生命", img: "talents/raun.webp" },
+                { name: "GAIALYRA", cat: "探索維度邊界", img: "talents/gaialyra.webp" }
             ];
 
             const grid = document.getElementById('talents-grid');
@@ -124,12 +121,11 @@
                                 <img src="${talent.img}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/1020x1020?text=${talent.name}'">
                             </div>
                             <h3 class="text-2xl font-black italic tracking-tighter uppercase text-black">${talent.name}</h3>
-                            <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase">${talent.cat}</p>
+                            <p class="text-[10px] font-bold text-gray-400 mt-1 uppercase tracking-widest">${talent.cat}</p>
                         </div>`;
                 });
             }
 
-            // Banner 輪播資料
             const bannerArtists = [
                 { name: "劉揚安", img: "images/luyanganhero-banner.jpg" },
                 { name: "NØVEX", img: "images/novexhero-banner.jpg" },
@@ -137,7 +133,6 @@
                 { name: "EUNA", img: "images/eunahero-banner.jpg" },
                 { name: "JOAH", img: "images/joahhero-banner.jpg" }
             ];
-            
             let currentIndex = 0;
             const imgElement = document.getElementById('carousel-img');
             const nameElement = document.getElementById('artist-name');
